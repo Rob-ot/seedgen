@@ -1,0 +1,27 @@
+{
+  "name": "seed-expander",
+  "version": "1.0.0",
+  "description": "Expand a seed to useful values",
+  "main": "seed-expander.js",
+  "scripts": {
+    "watch": "npm-watch",
+    "test": "mocha --watch --compilers coffee:coffee-script/register test.coffee"
+  },
+  "watch": {
+    "test": "*.coffee"
+  },
+  "keywords": [
+    "seed",
+    "expand",
+    "hash",
+    "variation"
+  ],
+  "author": "Rob Middleton",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "1.7.1",
+    "lodash": "^2.4.1",
+    "mocha": "^2.0.1",
+    "npm-watch": "0.0.0"
+  }
+}
