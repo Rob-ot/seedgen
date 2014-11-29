@@ -18,6 +18,7 @@ generate("middlerob")         // { color: 5, rotation: 71 }
 
 ## Try it out
 
+[Open on jsbin.com](http://jsbin.com/sedokigina/1/edit?js,console)
 
 ## Installation
 
