@@ -1,4 +1,10 @@
 
+/*
+ * seedgen
+ * @license MIT
+ * https://github.com/Rob-ot/seedgen
+ */
+
 var crypto = require('crypto-browserify')
 var bignum = require('browserify-bignum')
 

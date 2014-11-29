@@ -17881,6 +17881,12 @@ module.exports = function (crypto, exports) {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require(4).Buffer)
 },{}],118:[function(require,module,exports){
 
+/*
+ * seedgen
+ * @license MIT
+ * https://github.com/Rob-ot/seedgen
+ */
+
 var crypto = require(32)
 var bignum = require(1)
 

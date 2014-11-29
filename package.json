@@ -5,7 +5,7 @@
   "author": "Rob Middleton",
   "license": "MIT",
   "main": "seedgen.js",
-  "repository": "",
+  "repository": "git@github.com:Rob-ot/seedgen.git",
   "scripts": {
     "watch": "npm-watch",
     "test": "mocha --compilers coffee:coffee-script/register test.coffee",
@@ -13,7 +13,7 @@
     "standalone": "npm run clean && npm run buildstandalone && npm run minifystandalone && npm run teststandlone && npm run teststandlonemin",
     "clean": "rm -f seedgen-standalone.js && rm -f seedgen-standalone.min.js",
     "buildstandalone": "browserify seedgen.js  -p bundle-collapser/plugin --standalone seedgen > seedgen-standalone.js",
-    "minifystandalone": "uglifyjs seedgen-standalone.js -c pure_getters=true,warnings=false -m toplevel=true -o seedgen-standalone.min.js",
+    "minifystandalone": "uglifyjs seedgen-standalone.js --comments -c pure_getters=true,warnings=false -m toplevel=true -o seedgen-standalone.min.js",
     "teststandlone": "SEEDGEN_FILE=./seedgen-standalone.js npm test",
     "teststandlonemin": "SEEDGEN_FILE=./seedgen-standalone.min.js npm test"
   },
