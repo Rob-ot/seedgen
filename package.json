@@ -1,27 +1,42 @@
 {
-  "name": "seed-expander",
+  "name": "seedgen",
   "version": "1.0.0",
-  "description": "Expand a seed to useful values",
-  "main": "seed-expander.js",
+  "description": "Easily generate seeded \"random\" values",
+  "author": "Rob Middleton",
+  "license": "MIT",
+  "main": "seedgen.js",
+  "repository": "",
   "scripts": {
     "watch": "npm-watch",
-    "test": "mocha --watch --compilers coffee:coffee-script/register test.coffee"
-  },
-  "watch": {
-    "test": "*.coffee"
+    "test": "mocha --compilers coffee:coffee-script/register test.coffee",
+    "testwatch": "mocha --watch --compilers coffee:coffee-script/register test.coffee",
+    "standalone": "npm run clean && npm run buildstandalone && npm run minifystandalone && npm run teststandlone && npm run teststandlonemin",
+    "clean": "rm -f seedgen-standalone.js && rm -f seedgen-standalone.min.js",
+    "buildstandalone": "browserify seedgen.js  -p bundle-collapser/plugin --standalone seedgen > seedgen-standalone.js",
+    "minifystandalone": "uglifyjs seedgen-standalone.js -c pure_getters=true,warnings=false -m toplevel=true -o seedgen-standalone.min.js",
+    "teststandlone": "SEEDGEN_FILE=./seedgen-standalone.js npm test",
+    "teststandlonemin": "SEEDGEN_FILE=./seedgen-standalone.min.js npm test"
   },
   "keywords": [
     "seed",
     "expand",
     "hash",
-    "variation"
+    "variation",
+    "generate",
+    "generator",
+    "identicon",
+    "browserify"
   ],
-  "author": "Rob Middleton",
-  "license": "MIT",
+  "dependencies": {
+    "browserify-bignum": "^1.3.0-2",
+    "crypto-browserify": "^3.3.0"
+  },
   "devDependencies": {
+    "browserify": "^6.3.3",
+    "bundle-collapser": "^1.1.0",
     "coffee-script": "1.7.1",
     "lodash": "^2.4.1",
     "mocha": "^2.0.1",
-    "npm-watch": "0.0.0"
+    "uglify-js": "^2.4.15"
   }
 }
